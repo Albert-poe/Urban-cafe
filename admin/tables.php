@@ -38,7 +38,40 @@ $result = mysqli_query($conn, "SELECT * FROM cafe_tables");
 
 <td><?= $row['status']; ?></td>
 
-<td><?= $row['qr_code']; ?></td>
+<td>
+
+<?php
+if(empty($row['qr_code']))
+{
+?>
+
+<a href="Generate_QR.php?id=<?= $row['table_id']; ?>">
+Generate QR
+</a>
+
+<?php
+}
+else
+{
+?>
+
+<img
+src="../<?= $row['qr_code']; ?>"
+width="100">
+
+<br><br>
+
+<a href="../<?= $row['qr_code']; ?>" download>
+Download
+</a>
+
+<?php
+}
+?>
+
+
+
+</td>
 
 </tr>
 
