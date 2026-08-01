@@ -45,7 +45,7 @@ if(empty($row['qr_code']))
 {
 ?>
 
-<a href="Generate_QR.php?id=<?= $row['table_id']; ?>">
+<a href="GenerateQR.php?id=<?= $row['table_id']; ?>">
 Generate QR
 </a>
 
